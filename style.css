@@ -1,5 +1,5 @@
 * {
-  transition: all .1s ease-in;
+  /* transition: all .1s ease-in; */
 }
 
 body {
@@ -66,7 +66,7 @@ button:hover {
   width: 100%;
   box-sizing: border-box;
   height: 45px;
-  
+
 }
 
 .element:nth-child(even) {
@@ -112,12 +112,7 @@ button:hover {
   font-weight: 400;
   font-size: 18px;
   color: white;
-
-
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -142,37 +137,39 @@ button:hover {
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkmark::after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the checkmark when checked */
-.container input:checked~.checkmark:after {
+.container input:checked~.checkmark::after {
   display: block;
 }
 
+
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.container .checkmark::after {
   left: 6px;
   top: 2px;
   width: 5px;
   height: 10px;
   border: solid black;
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 small {
   font-size: 11px;
 }
-.container input:checked +span{
+
+.container input:checked+span {
   text-decoration: line-through;
-  color:#9B96AC;
+  color: #9B96AC;
 }
-.container input:checked ~small{
+
+.container input:checked~small {
   text-decoration: line-through;
-  color:#9B96AC;
+  color: #9B96AC;
 }
